@@ -2,5 +2,7 @@
 name = "kontex"
 version = "0.1.0"
 authors = ["Chris MacNaughton <chmacnaughton@gmail.com>"]
-
+description = "Kontex is a full text search index."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/ChrisMacNaughton/kontex.git"
 [dependencies]
