@@ -12,8 +12,8 @@
 //! let mut index = Index::new();
 //!
 //! let mut attrs = HashMap::new();
-//! attrs.insert("text", "Hello, World!");
-//! attrs.insert("title", "Helo");
+//! attrs.insert("content", "Hello, World!");
+//! attrs.insert("title", "Hello");
 //! let document = Document::from_attributes(attrs);
 //! let _ = index.add_document(document.clone());
 //!

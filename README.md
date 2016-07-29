@@ -12,8 +12,8 @@ use std::collections::HashMap;
 let mut index = Index::new();
 
 let mut attrs = HashMap::new();
-attrs.insert("text", "Hello, World!");
-attrs.insert("title", "Helo");
+attrs.insert("content", "Hello, World!");
+attrs.insert("title", "Hello");
 let document = Document::from_attributes(attrs);
 let _ = index.add_document(document.clone());
 
@@ -24,3 +24,7 @@ let result = index.search(Search::from_attributes(search));
 println!("{:?}", index);
 assert_eq!(*result.first().unwrap(), document);
 ```
+
+## Status
+
+This is under very active development so APIs may change or break without warning. If you need stable search indexing, I suggest you use something like Apache Lucene.
