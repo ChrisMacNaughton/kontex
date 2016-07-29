@@ -7,7 +7,7 @@ use std::hash::Hash;
 pub struct Search {}
 
 impl Search {
-	pub fn from_attributes<T: Display + Debug + Eq + Hash>(attrs: HashMap<T, T>) -> Search {
-		Search {}
-	}
+    pub fn from_attributes<T: Display + Debug + Eq + Hash>(attrs: HashMap<T, T>) -> Search {
+        Search {}
+    }
 }
