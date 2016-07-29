@@ -14,12 +14,12 @@ impl Document {
         for (k, v) in &attrs {
             new_attrs.insert(k.to_string(), v.to_string());
         }
-        Document {
-            attrs: new_attrs,
-        }
+        Document { attrs: new_attrs }
     }
 
-    pub fn tokenize<T: Fn(&String)->Vec<String>>(&self, func: &T) -> HashMap<String, Vec<String>> {
+    pub fn tokenize<T: Fn(&String) -> Vec<String>>(&self,
+                                                   func: &T)
+                                                   -> HashMap<String, Vec<String>> {
         let mut parts = HashMap::new();
         for (key, body) in &self.attrs {
             parts.insert(key.to_owned(), (func)(body));

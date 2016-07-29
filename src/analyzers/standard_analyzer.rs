@@ -35,7 +35,7 @@ mod tests {
 
 
 impl StandardAnalyzer {
-        fn escape(body: String) -> String {
+    fn escape(body: String) -> String {
         let mut body = body;
         body = body.chars().filter(|ch| ch.is_alphanumeric()).collect();
         body
@@ -48,10 +48,9 @@ impl Analyzer for StandardAnalyzer {
     }
 
     fn tokenize(body: &String) -> Vec<String> {
-        body
-            .split_whitespace()
+        body.split_whitespace()
             .map(|s| s.to_lowercase())
-            .map(|s| StandardAnalyzer::escape(s) )
+            .map(|s| StandardAnalyzer::escape(s))
             .collect()
     }
 
@@ -79,15 +78,14 @@ impl Analyzer for StandardAnalyzer {
         //     let mut count = word_count.entry(word).or_insert(0);
         //     *count += 1;
         // }
-        
+
         // let mut extra_tokens = HashMap::new();
 
 
 
         ParsedDocument {
             document: doc,
-            tokens: full_word_count,
-            // extra_tokens: 
+            tokens: full_word_count, // extra_tokens:
         }
     }
 }

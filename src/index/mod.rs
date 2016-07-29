@@ -13,7 +13,7 @@ mod tests {
     use analyzers::standard_analyzer::StandardAnalyzer;
     use {Document, Search};
     use std::collections::HashMap;
-    
+
     #[test]
     fn it_queries() {
 
@@ -33,7 +33,7 @@ mod tests {
         assert_eq!(*result.first().unwrap(), document);
     }
 
-    
+
     #[test]
     fn it_queries_wildcard() {
 
@@ -122,18 +122,18 @@ impl<T: Analyzer> Index<T> {
                         Some(s) => {
                             for (ref count, ref doc_ids) in s {
                                 for doc_id in doc_ids.iter() {
-                                    docs.push((*count.clone(), self.documents.get(*doc_id).unwrap()))
+                                    docs.push((*count.clone(),
+                                               self.documents.get(*doc_id).unwrap()))
                                 }
                             }
-                            
-                        },
-                        None => continue
+                        }
+                        None => continue,
                     }
                 }
-            },
-            None => return docs
+            }
+            None => return docs,
         }
-        
+
         // docs.push(self.documents.first().unwrap());
         docs
     }
